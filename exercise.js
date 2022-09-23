@@ -30,6 +30,8 @@
   For numbers divisible by 3, print "Fizz" instead of the number, and for numbers divisible by 5, print "Buzz" instead.
   Then, modify your program to print "FizzBuzz"  for numebrs that are divisible by both 3 and 5.
   
+*/
+  
   // for loop
   
   for (let i = 1; i <= 100; i++) {
@@ -85,6 +87,53 @@
   
   while (step < 101);
   
+_________________________________________________________________________________
+
+/*
+  Chessboard
+  
+  Write a program that creates a string that represents a 8x8 grid, using new-line characters to seperate lines.
+  At each position of the grid there is either a space or a # character.  
+  the characters should form a chessboard.
+  Passing this string to console.log should show something like this:
+  _________________________________________________________________________________
+   # # # #
+  # # # # 
+   # # # #
+  # # # #
+   # # # # 
+  # # # #
+   # # # #
+  # # # #
+  _________________________________________________________________________________
+  When you have a program that generates this pattern, define a binding size = 8 snd change the program so that it works for any size, 
+  outputting a grid of the given width and height.
+  
 */
 
-  
+  // create a "size" variable, set it equal tyo 8.
+  let size = 8;
+  // create an empty string "result".
+  let result = "";
+
+  // create a loop to create rows, create a loop to create columns
+  let row = 1;
+  while (row <= size) {
+    let column = 1;
+    while (column <= size) {
+      // if (column + row) is even.
+      if ((column + row) % 2 === 0) {
+        // result adds an empty space
+        result += " ";
+      } else {
+        // result adds "#" character
+        result += "#";
+      }
+      column++;
+    }
+    // create new line character.
+    result += "\n";
+    row++;
+  }
+
+  console.log(result);
